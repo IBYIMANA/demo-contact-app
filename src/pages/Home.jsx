@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import React, { useState, useEffect } from "react"
 import { FetchContacts } from "../apis/contacts"
 import Contact from "../components/Contact";
 
@@ -13,11 +13,14 @@ const Home = () => {
       .catch((err) => {
         console.log(err);
       });
-  }, [])
+  }, []);
+
+  // Add a loading state
+  
 
   return (
-    <div className="flex justify-center items-center w-full bg-gray-900">
-      <section className="bg-gray-900 text-white">
+    <div className="flex items-center justify-center w-full bg-gray-900">
+      <section className="text-white bg-gray-900">
         <div className="max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
           <div className="max-w-xl">
             <h2 className="text-3xl font-bold sm:text-4xl">My contacts</h2>
@@ -29,15 +32,16 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="mt-8 grid grid-cols-1 gap-8 md:mt-16 md:grid-cols-2 md:gap-12 lg:grid-cols-3">
-            {contacts.map((contact) => (
+          <div className="grid grid-cols-1 gap-8 mt-8 md:mt-16 md:grid-cols-2 md:gap-12 lg:grid-cols-3">
+            {/* Add a null check for contacts before mapping */}
+            {contacts && contacts.map((contact) => (
               <Contact key={contact._id} contact={contact} />
             ))}
           </div>
         </div>
       </section>
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;
