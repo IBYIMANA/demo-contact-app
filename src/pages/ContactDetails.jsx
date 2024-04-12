@@ -46,12 +46,20 @@ const ContactDetails = () => {
   }
 
   return (
-    <div>
+    <div className="container flex items-center justify-center w-full max-w-screen-xl gap-20 p-4 px-4 py-8 mx-auto text-center bg-gray-300 border border-gray-100 rounded-lg shadow-lg sm:px-6 sm:py-12 lg:px-8">
+      <div className="float-left ml-2">
       <h1>Name: {contact.fullName}</h1>
       <p>Phone: {contact.phone}</p>
       <p>Email: {contact.email}</p>
-
-      <button onClick={deleteContact} type="button">Delete</button>
+      </div>
+      <div className="flex float-right gap-6 mt-4 sm:mt-0 sm:flex-row sm:items-center">
+      <button onClick={() => navigate(`/update/${contact._id}`)} className= "block px-5 py-3 text-sm font-medium text-black transition rounded-lg bg-lime-400 hover:bg-gray-200 focus:outline-none focus:ring">Update</button>
+           
+      <button className="block px-5 py-3 text-sm font-medium text-black transition rounded-lg bg-lime-400 hover:bg-gray-200 focus:outline-none focus:ring" onClick={deleteContact} type="button">Delete</button>   
+              
+            
+          </div>
+          
 
       {message.type === 'success' && <p className="px-3 py-2 text-green-700 bg-green-200 rounded-sm">{message.content}</p>}
       {message.type === 'error' && <p className="px-3 py-2 text-red-700 bg-red-200 rounded-sm">{message.content}</p>}

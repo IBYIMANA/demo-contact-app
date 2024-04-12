@@ -26,9 +26,7 @@ const Home = () => {
             <h2 className="text-3xl font-bold sm:text-4xl">My contacts</h2>
 
             <p className="mt-4 text-gray-300">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat dolores iure fugit totam
-              iste obcaecati. Consequatur ipsa quod ipsum sequi culpa delectus, cumque id tenetur
-              quibusdam, quos fuga minima.
+              
             </p>
           </div>
 

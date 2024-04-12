@@ -88,12 +88,12 @@ const Add = () => {
   };
 
   return (
-    <div className="flex justify-center items-center w-full">
-      <section className=" text-black flex items-center justify-center w-full">
+    <div className="flex items-center justify-center w-full">
+      <section className="flex items-center justify-center w-full text-black ">
         <div className="max-w-screen-xl">
           <div className="grid grid-cols-1 gap-8">
-            <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
-              <div className="mx-auto max-w-lg text-center">
+            <div className="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
+              <div className="max-w-lg mx-auto text-center">
                 <h1 className="text-2xl font-bold sm:text-3xl">Add new contact</h1>
                 <p className="mt-4 text-gray-500">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Et libero nulla eaque error neque
@@ -103,7 +103,7 @@ const Add = () => {
 
 
               {/* Contact form ==========================================================================  */}
-              <form onSubmit={handleSubmitContact} className="mx-auto mt-8 mb-8 max-w-md space-y-4">
+              <form onSubmit={handleSubmitContact} className="max-w-md mx-auto mt-8 mb-8 space-y-4">
                 <div>
                   <div className="relative">
                     <input
@@ -111,7 +111,7 @@ const Add = () => {
                       name="fullName"
                       value={contact.fullName}
                       onChange={handleInput}
-                      className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+                      className="w-full p-4 text-sm border-gray-200 rounded-lg shadow-sm pe-12"
                       placeholder="Enter full name"
                     />
                   </div>
@@ -124,7 +124,7 @@ const Add = () => {
                       name="email"
                       value={contact.email}
                       onChange={handleInput}
-                      className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+                      className="w-full p-4 text-sm border-gray-200 rounded-lg shadow-sm pe-12"
                       placeholder="Enter email"
                     />
                   </div>
@@ -137,7 +137,7 @@ const Add = () => {
                       name="phone"
                       value={contact.phone}
                       onChange={handleInput}
-                      className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+                      className="w-full p-4 text-sm border-gray-200 rounded-lg shadow-sm pe-12"
                       placeholder="Enter phone number"
                     />
                   </div>
@@ -147,8 +147,7 @@ const Add = () => {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="inline-block rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white"
-                  >
+                    className="inline-block px-5 py-3 text-sm font-medium text-white rounded-lg bg-lime-500">
                     {loading && "loading...🐥"}
                     {!loading && "Add contact"}
                   </button>
